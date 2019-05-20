@@ -1,0 +1,86 @@
+ReadMe
+
+C02WC0SSHV2F:Mirakel kkandukuri$ java InstallCert google.com
+Loading KeyStore /Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/security/cacerts...
+Opening connection to cmhlqromsesb01.expdev.local:8443...
+Starting SSL handshake...
+
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1946)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:316)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:310)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1639)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:223)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:1037)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:965)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1064)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1367)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1395)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1379)
+	at InstallCert.main(InstallCert.java:98)
+Caused by: sun.security.validator.ValidatorException: PKIX path building failed: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:397)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:302)
+	at sun.security.validator.Validator.validate(Validator.java:262)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:324)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:229)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:105)
+	at InstallCert$SavingTrustManager.checkServerTrusted(InstallCert.java:193)
+	at sun.security.ssl.AbstractTrustManagerWrapper.checkServerTrusted(SSLContextImpl.java:1091)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1621)
+	... 8 more
+Caused by: sun.security.provider.certpath.SunCertPathBuilderException: unable to find valid certification path to requested target
+	at sun.security.provider.certpath.SunCertPathBuilder.build(SunCertPathBuilder.java:141)
+	at sun.security.provider.certpath.SunCertPathBuilder.engineBuild(SunCertPathBuilder.java:126)
+	at java.security.cert.CertPathBuilder.build(CertPathBuilder.java:280)
+	at sun.security.validator.PKIXValidator.doBuild(PKIXValidator.java:392)
+	... 16 more
+
+Server sent 3 certificate(s):
+
+ 1 Subject CN=expressdevesb.expdev.local, OU=expdevesb, O=Express, L=Columbus, ST=Ohio, C=US
+   Issuer  CN=BLFWDENTICA01, DC=EXPDEV, DC=LOCAL
+   sha1    3f 3d ea 55 bf b4 fd ca b0 80 5d b7 b4 36 4c f0 84 5f bc 15 
+   md5     dc 0f 0a 1f 5a 74 64 81 3a 6e a0 b9 50 10 3b 28 
+
+ 2 Subject CN=BLFWDENTICA01, DC=EXPDEV, DC=LOCAL
+   Issuer  CN=BLFWDROOTCA01, DC=EXPDEV, DC=LOCAL
+   sha1    26 d1 ca 15 da 2a 7c 0d 18 85 aa 98 e3 5b c4 aa 30 72 ad ff 
+   md5     71 fd ce 3b 6e 43 a9 ab 38 d3 10 b8 43 a1 6d 5b 
+
+ 3 Subject CN=BLFWDROOTCA01, DC=EXPDEV, DC=LOCAL
+   Issuer  CN=BLFWDROOTCA01, DC=EXPDEV, DC=LOCAL
+   sha1    3d 72 83 1f 88 86 4d 5d ab f0 28 ef f5 b5 43 c8 50 2d e4 00 
+   md5     12 a1 e3 5a f7 fa a9 6c 77 8c 0d 9b fd c6 9a 94 
+
+Enter certificate to add to trusted keystore or 'q' to quit: [1]
+
+
+[
+[
+  Version: V3
+  Subject: CN=expressdevesb.expdev.local, OU=expdevesb, O=Express, L=Columbus, ST=Ohio, C=US
+  Signature Algorithm: SHA256withRSA, OID = 1.2.840.113549.1.1.11
+
+  Key:  Sun RSA public key, 2048 bits
+  modulus: 16714985591059853923483830762946383849308416933580524916191110927297056824977379273461685402763481916650358298308033230437075319988132584899065181476731962523648289883333679704559053073741442847263655575064882656858380124330731876724683902572026310969343195747421419871732553050916587892946729437293263471656952032771049779147243886938227667513371161423265242479257036154577620476997845593129808062299153724980315278279225576655987517268974749851495923768962621652292872251368914707686380827390997223193670574183202689505092858881128060287311433318725215055738385660267237134152464866481423967940610072215229137567983
+  public exponent: 65537
+  Validity: [From: Mon Feb 06 10:35:30 EST 2017,
+               To: Thu Feb 04 10:35:30 EST 2027]
+  Issuer: CN=BLFWDENTICA01, DC=EXPDEV, DC=LOCAL
+  SerialNumber: [    290000b9 d170dedb fa0c2e26 87000200 00b9d1]
+
+Certificate Extensions: 9
+[1]: ObjectId: 1.3.6.1.4.1.311.21.10 Criticality=false
+Extension unknown: DER encoded OCTET string =
+0000: 04 0E 30 0C 30 0A 06 08   2B 06 01 05 05 07 03 01  ..0.0...+.......
+
+
+[2]: ObjectId: 1.3.6.1.4.1.311.21.7 Criticality=false
+Extension unknown: DER encoded OCTET string =
+0000: 04 30 30 2E 06 26 2B 06   01 04 01 82 37 15 08 E3  .00..&+.....7...
+0010: 86 46 87 E2 DA 6B 81 E1   9F 07 85 F1 F9 11 87 FF  .F...k..........
+0020: AF 45 81 11 82 97 CF 00   82 94 FA 01 02 01 64 02  .E............d.
+0030: 01 06                                              ..
+
