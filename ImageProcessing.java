@@ -34,7 +34,7 @@ import javax.xml.bind.Marshaller;
  * 
  * 
  * @author kkandukuri
- *
+ *checks if image is available or not.
  */
 public class ImageProcessing {
 
