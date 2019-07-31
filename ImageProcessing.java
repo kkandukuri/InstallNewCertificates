@@ -88,7 +88,7 @@ public class ImageProcessing {
 		BufferedWriter out;
 		String data;
 		public ImageThread(String[] splitString, String dataI,BufferedWriter writer) {
-			urlI = "https://images.express.com/is/image/expressfashion/" + splitString[splitString.length - 1].replace("\"", "");
+			urlI = "https://images.xxxxxx.com/is/image/expressfashion/" + splitString[splitString.length - 1].replace("\"", "");
 			out=writer;
 			data = dataI;
 		}
@@ -105,7 +105,7 @@ public class ImageProcessing {
 					out.write("\n");
 				}
 				else {
-					out.write(data + "," + "Not Available");// +","+"https://images.express.com/is/image/expressfashion/"+splitString[splitString.length-1]
+					out.write(data + "," + "Not Available");// +","+"https://images.xxxxx.com/is/image/expressfashion/"+splitString[splitString.length-1]
 					out.write("\n");
 				}
 				}catch(Exception e) {
